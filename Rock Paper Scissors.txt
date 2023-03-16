@@ -1,0 +1,29 @@
+// define the options
+const options = ["rock", "paper", "scissors"];
+
+// ask user for their choice
+const userChoice = prompt("Choose rock, paper, or scissors:");
+
+// check if user entered a valid choice
+if (!options.includes(userChoice)) {
+  alert("Invalid choice!");
+} else {
+  // generate a random choice for the computer
+  const computerChoice = options[Math.floor(Math.random() * 3)];
+  
+  // display the choices
+  alert(`You chose ${userChoice}, and the computer chose ${computerChoice}.`);
+  
+  // determine the winner
+  if (userChoice === computerChoice) {
+    alert("It's a tie!");
+  } else if (
+    (userChoice === "rock" && computerChoice === "scissors") ||
+    (userChoice === "paper" && computerChoice === "rock") ||
+    (userChoice === "scissors" && computerChoice === "paper")
+  ) {
+    alert("You win!");
+  } else {
+    alert("The computer wins!");
+  }
+}
